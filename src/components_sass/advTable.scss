@@ -1,0 +1,68 @@
+@mixin adv_text($fontWeight, $fontSize, $lineHeight, $letterSpacing, $color) {
+  font-family: "Inter", sans-serif !important;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+
+  letter-spacing: $letterSpacing;
+
+  color: $color;
+}
+
+.adv_table {
+  height: 35vh;
+
+  padding: 1.5rem 0 0 1rem;
+
+  .adv_table_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      @include adv_text(700, 17px, 21px, -0.03em, #000000);
+    }
+
+    div {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        box-sizing: border-box;
+        padding: 4px 8px;
+        background: #ffffff;
+        border: 1px solid #b6b6b6;
+        border-radius: 0;
+
+        span {
+          @include adv_text(600, 12px, 143.87%, -0.02em, #23272d);
+          text-transform: capitalize;
+        }
+      }
+
+      #icon_button {
+        padding: 3.125px;
+        border: 0.78125px solid #999ca0;
+      }
+    }
+  }
+
+  .adv_table_content {
+    background: #ffffff;
+    border: 1px solid #e0e7ff;
+    border-radius: 4px;
+    margin-top: 1rem;
+    width: 80vw;
+
+    .actions {
+      @include adv_text(600, 13px, 16px, -0.03em, #125dff);
+      text-align: center;
+    }
+
+    .strategy {
+      @include adv_text(600, 13px, 143.87%, -0.02em, #0085ff);
+      text-decoration-line: underline;
+    }
+  }
+}

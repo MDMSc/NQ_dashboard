@@ -1,0 +1,102 @@
+@mixin adv_text($fontWeight, $fontSize, $lineHeight, $letterSpacing, $color) {
+  font-family: "Inter", sans-serif !important;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+
+  letter-spacing: $letterSpacing;
+
+  color: $color;
+}
+
+.adv_graph {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+  height: 25vh;
+
+  .adv_graph_content {
+    width: 25vw;
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #dadeeb;
+    padding: 0.5rem;
+
+    .adv_graph_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+
+      p {
+        @include adv_text(700, 12px, 143.87%, -0.02em, #000000);
+      }
+
+      div {
+        height: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2px;
+
+        .adv_graph_select {
+          display: flex;
+          align-items: center;
+
+          &::before {
+            border: none;
+          }
+
+          select {
+            @include adv_text(500, 10px, 143.87%, -0.02em, #000000);
+          }
+        }
+
+        button {
+          padding: 0;
+        }
+      }
+    }
+
+    .adv_graph_data {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0.5rem 0;
+      width: 100%;
+
+      .adv_data_subheader {
+        @include adv_text(400, 8px, 10px, -0.01em, #474747);
+      }
+
+      .adv_data_header {
+        @include adv_text(600, 12px, 15px, inherit, #000000);
+
+        span {
+          @include adv_text(400, 9px, 11px, inherit, #000000);
+        }
+      }
+    }
+
+    #data_1 {
+      div {
+        width: 25%;
+      }
+    }
+
+    #data_2 {
+      div {
+        width: 33%;
+      }
+    }
+
+    #data_3 {
+      div {
+        width: 50%;
+      }
+    }
+  }
+}

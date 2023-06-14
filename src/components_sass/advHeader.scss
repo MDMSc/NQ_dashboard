@@ -1,0 +1,69 @@
+@mixin adv_text($fontWeight, $fontSize, $lineHeight, $letterSpacing, $color) {
+  font-family: 'Inter', sans-serif !important;
+  font-style: normal;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+
+  letter-spacing: $letterSpacing;
+
+  color: $color;
+}
+
+.adv_header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 20vh;
+  background: #ffffff;
+  border: 1px solid #dadeeb;
+  padding: 1rem 2rem;
+
+  p {
+    @include adv_text(700, 24px, 29px, -0.03em, #000000);
+  }
+
+  .adv_dropdown_div {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .adv_dropdown_types {
+      display: flex;
+      justify-content: space-between;
+      width: 23rem;
+
+      .adv_select_title {
+        @include adv_text(400, 12px, 143.87%, -0.02em, #000000);
+      }
+
+      .adv_select_contents {
+        padding: 0.3rem 0.3rem 0.3rem 0.5rem;
+
+        width: 11rem;
+        height: 33px;
+
+        background: #ffffff;
+        border: 1px solid #dadeeb;
+        border-radius: 0;
+
+        select {
+          @include adv_text(600, 12px, 143.87%, -0.02em, #000000);
+        }
+      }
+    }
+
+    .adv_datepicker {
+      width: 17rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0px;
+      gap: 6px;
+
+      .adv_select_title {
+        @include adv_text(400, 12px, 143.87%, -0.02em, #000000);
+      }
+    }
+  }
+}
